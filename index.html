@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOGMA Studios - Redefining Browser Gaming</title>
-    <meta name="description" content="DOGMA Studios - Building the next WebGPU-native game engine that makes desktop clients obsolete. 500+ players. 144 FPS. Zero downloads.">
+    <meta name="description" content="DOGMA Studios - Building the next WebGPU-native game engine that makes desktop clients obsolete. 1,000+ players per region. 144 FPS. Zero downloads.">
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
@@ -222,7 +222,7 @@
             text-transform: uppercase;
             text-align: center;
             margin-top: -20px;
-            margin-left: 0.25em; /* Compensate for letter-spacing on right */
+            margin-left: 0.25em;
             opacity: 0;
             animation: fadeInUp 1s ease forwards 0.3s;
             background: linear-gradient(90deg, #667eea, #764ba2);
@@ -619,10 +619,8 @@
     
     <div class="grid-3d"></div>
     
-    <!-- Particle effects -->
     <div class="particles" id="particles"></div>
 
-    <!-- WebGPU status badge -->
     <div class="tech-badge">
         <div class="status"></div>
         <span>WebGPU</span> Engine Active
@@ -638,17 +636,16 @@
         
         <div class="description-card">
             <p class="description">
-                We're building the <span class="highlight">WebGPU-native game engine</span> that proves 
-                desktop clients are obsolete. True AAA scale. Native performance. 
-                Zero friction.
+                We're building the <span class="highlight">WebGPU-native game engine</span> that makes 
+                desktop clients obsolete. <span class="highlight">True MMO architecture</span> with edge computing.
+                1,000+ players per region, seamless global scale. Zero downloads. Instant play.
             </p>
         </div>
 
-        <!-- Tech specs -->
         <div class="tech-specs">
             <div class="spec-card">
-                <div class="spec-value">500+</div>
-                <div class="spec-label">Concurrent Players</div>
+                <div class="spec-value">1,000+</div>
+                <div class="spec-label">Players Per Region</div>
             </div>
             <div class="spec-card">
                 <div class="spec-value">144</div>
@@ -660,11 +657,10 @@
             </div>
             <div class="spec-card">
                 <div class="spec-value">&lt;15ms</div>
-                <div class="spec-label">Network Latency</div>
+                <div class="spec-label">Edge Latency</div>
             </div>
         </div>
 
-        <!-- Breaking dogmas section -->
         <div class="dogmas-section">
             <div class="dogmas-header">
                 <h2 class="dogmas-title">Shattering Industry Dogmas</h2>
@@ -672,9 +668,9 @@
             </div>
             
             <div class="dogma-item">
-                <span class="dogma-false">"Browsers can't handle MMO scale"</span>
+                <span class="dogma-false">"Browser games can't match native MMO architecture"</span>
                 <span class="dogma-arrow">→</span>
-                <span class="dogma-true">500+ players, no sweat</span>
+                <span class="dogma-true">1,000/region, seamless global scale, no loading screens</span>
             </div>
             <div class="dogma-item">
                 <span class="dogma-false">"JavaScript is too slow for games"</span>
@@ -682,20 +678,18 @@
                 <span class="dogma-true">GPU compute + WASM = native speed</span>
             </div>
             <div class="dogma-item">
-                <span class="dogma-false">"Web graphics can't compete"</span>
+                <span class="dogma-false">"Players need to download clients"</span>
                 <span class="dogma-arrow">→</span>
-                <span class="dogma-true">WebGPU: millions of polys @ 144 FPS</span>
+                <span class="dogma-true">Edge computing + streaming: instant play, zero friction</span>
             </div>
         </div>
 
-        <!-- Contact Button -->
         <footer class="footer">
             <a href="mailto:austin@dogma.game" class="contact-btn">Contact</a>
         </footer>
     </div>
 
     <script>
-        // Enhanced particle system
         const particleContainer = document.getElementById('particles');
         const particleCount = 60;
 
@@ -712,7 +706,6 @@
             particleContainer.appendChild(particle);
         }
 
-        // Interactive background on mouse move
         document.addEventListener('mousemove', (e) => {
             const x = e.clientX / window.innerWidth;
             const y = e.clientY / window.innerHeight;
@@ -724,9 +717,7 @@
             });
         });
 
-        // Check WebGPU support
         const statusDot = document.querySelector('.tech-badge .status');
-        const badge = document.querySelector('.tech-badge');
         
         async function checkWebGPU() {
             if ('gpu' in navigator) {
@@ -749,7 +740,6 @@
         
         checkWebGPU();
 
-        // Add hover effect to spec cards
         document.querySelectorAll('.spec-card').forEach(card => {
             card.addEventListener('mouseenter', () => {
                 card.querySelector('.spec-value').style.transform = 'scale(1.1)';
@@ -759,7 +749,6 @@
             });
         });
 
-        // Stagger animation for dogma items
         const dogmaItems = document.querySelectorAll('.dogma-item');
         dogmaItems.forEach((item, index) => {
             item.style.opacity = '0';
